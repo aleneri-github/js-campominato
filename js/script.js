@@ -9,8 +9,6 @@
 
 
 // Il computer deve generare 16 numeri casuali tra 1 e 100.
-
-
 function generaNumeri(min, max) {
   var numero = Math.floor(Math.random() * (max - min)) + min;
   return numero
@@ -18,58 +16,8 @@ function generaNumeri(min, max) {
 
 var arrayNumeriCasuali = [];
 console.log(arrayNumeriCasuali);
+
 for (var i = 1; i <= 16; i++) {
   numeroCasuale = generaNumeri(1, 100);
   arrayNumeriCasuali.push(numeroCasuale);
 }
-
-
-
-// // Il computer deve generare 16 numeri casuali tra 1 e 100.
-// var numeroCasuale = Math.floor(Math.random() * 99) + 1;
-// arrayNumeriCasuali.push(numeroCasuale);
-//
-// var numeroCasuale = Math.floor(Math.random() * 99) + 1;
-// arrayNumeriCasuali.push(numeroCasuale);
-//
-// var numeroCasuale = Math.floor(Math.random() * 99) + 1;
-// arrayNumeriCasuali.push(numeroCasuale);
-//
-// var numeroCasuale = Math.floor(Math.random() * 99) + 1;
-// arrayNumeriCasuali.push(numeroCasuale);
-//
-// var numeroCasuale = Math.floor(Math.random() * 99) + 1;
-// arrayNumeriCasuali.push(numeroCasuale);
-//
-// var numeroCasuale = Math.floor(Math.random() * 99) + 1;
-// arrayNumeriCasuali.push(numeroCasuale);
-//
-// var numeroCasuale = Math.floor(Math.random() * 99) + 1;
-// arrayNumeriCasuali.push(numeroCasuale);
-//
-// var numeroCasuale = Math.floor(Math.random() * 99) + 1;
-// arrayNumeriCasuali.push(numeroCasuale);
-//
-// var numeroCasuale = Math.floor(Math.random() * 99) + 1;
-// arrayNumeriCasuali.push(numeroCasuale);
-//
-// var numeroCasuale = Math.floor(Math.random() * 99) + 1;
-// arrayNumeriCasuali.push(numeroCasuale);
-//
-// var numeroCasuale = Math.floor(Math.random() * 99) + 1;
-// arrayNumeriCasuali.push(numeroCasuale);
-//
-// var numeroCasuale = Math.floor(Math.random() * 99) + 1;
-// arrayNumeriCasuali.push(numeroCasuale);
-//
-// var numeroCasuale = Math.floor(Math.random() * 99) + 1;
-// arrayNumeriCasuali.push(numeroCasuale);
-//
-// var numeroCasuale = Math.floor(Math.random() * 99) + 1;
-// arrayNumeriCasuali.push(numeroCasuale);
-//
-// var numeroCasuale = Math.floor(Math.random() * 99) + 1;
-// arrayNumeriCasuali.push(numeroCasuale);
-//
-// var numeroCasuale = Math.floor(Math.random() * 99) + 1;
-// arrayNumeriCasuali.push(numeroCasuale);
