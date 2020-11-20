@@ -52,8 +52,12 @@ console.log(arrayBombe);
 
 var perso = false;
 while ((tentativiUtente.length < 3) && (perso == false)) {
+
   var numUtente = parseInt(prompt('Inserisci un numero compreso tra 1 e 100'));
   var controlloUtente = eInArray(tentativiUtente, numUtente);
+
+  var controlloGioco = eInArray(arrayBombe, tentativiUtente);
+  console.log(controlloGioco);
 
   if (controlloUtente == false) {
     tentativiUtente.push(numUtente)
