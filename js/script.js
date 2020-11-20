@@ -49,28 +49,9 @@ console.log(arrayBombe);
 // In seguito deve chiedere all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
 // L’utente non può inserire più volte lo stesso numero.
 
-// while (tentativiUtente.length < 3) {
-//   var numUtente = parseInt(prompt('Inserisci un numero compreso tra 1 e 100'));
-//   var controlloUtente = eInArray(tentativiUtente, numUtente);
-//
-//   if (controlloUtente == false) {
-//     tentativiUtente.push(numUtente)
-//   } else {
-//     alert('NUMERO GIA INSERITO');
-//   }
-// }
-//
-// }
 
-
-
-
-
-
-
-
-for (var i = 0; i < 3; i++) {
-
+var perso = false;
+while ((tentativiUtente.length < 3) && (perso == false)) {
   var numUtente = parseInt(prompt('Inserisci un numero compreso tra 1 e 100'));
   var controlloUtente = eInArray(tentativiUtente, numUtente);
 
@@ -80,6 +61,7 @@ for (var i = 0; i < 3; i++) {
     alert('NUMERO GIA INSERITO');
   }
 }
+
 console.log(tentativiUtente);
 
 // Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
