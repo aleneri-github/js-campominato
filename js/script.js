@@ -32,16 +32,34 @@ function eInArray(array, elemento) {
 // ----------------------------------------------------------------
 
 var arrayBombe = [];
+var tentativiUtente = [];
 
 // Il computer deve generare 16 numeri casuali tra 1 e 100.
+// I numeri non possono essere duplicati.
 while (arrayBombe.length < 16) {
   var numCasuale = numeroCasuale(1, 100);
-
   var controllo = eInArray(arrayBombe, numCasuale);
 
   if (controllo == false) {
     arrayBombe.push(numCasuale);
     console.log(arrayBombe);
-
   }
+}
+
+// In seguito deve chiedere all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
+
+for (var i = 0; i < 3; i++) {
+
+  var numUtente = parseInt(prompt('Inserisci un numero compreso tra 1 e 100'));
+  var controlloUtente = eInArray(tentativiUtente, numUtente);
+
+  if (controlloUtente == false) {
+    tentativiUtente.push(numUtente)    
+  }
+
+  console.log(tentativiUtente);
+
+
+
+
 }
