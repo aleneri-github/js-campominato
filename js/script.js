@@ -59,10 +59,11 @@ while ((tentativiUtente.length < 3) && (perso == false)) {
   var controlloGioco = eInArray(arrayBombe, tentativiUtente);
   console.log(controlloGioco);
 
-  if (controlloUtente == false) {
-    tentativiUtente.push(numUtente)
-  } else {
-    alert('NUMERO GIA INSERITO');
+  if (controlloGioco == true) {
+    alert('HAI PERSO');
+    perso = true;
+  } else if (controlloUtente == false) {
+    tentativiUtente.push(numUtente);
   }
 }
 
