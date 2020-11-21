@@ -33,6 +33,7 @@ function eInArray(array, elemento) {
 
 var arrayBombe = [];
 var tentativiUtente = [];
+var punteggio = 0;
 
 // Il computer deve generare 16 numeri casuali tra 1 e 100.
 // I numeri non possono essere duplicati.
@@ -64,6 +65,9 @@ while ((tentativiUtente.length < 3) && (perso == false)) {
     perso = true;
   } else if (controlloUtente == false) {
     tentativiUtente.push(numUtente);
+    punteggio++;
+    console.log(punteggio);
+
   }
 }
 
