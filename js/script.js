@@ -66,7 +66,7 @@ while (tentativiUtente.length < maxTentativi && perso == false) {
   }
   console.log('numero duplicato ', controlloUtente);
 
-  var controlloGioco = eInArray(arrayBombe,tentativiUtente);
+  var controlloGioco = eInArray(arrayBombe,numUtente);
   console.log('è una bomba ', controlloGioco);
 
   if(controlloGioco == true) {
