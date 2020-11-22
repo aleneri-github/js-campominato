@@ -32,11 +32,15 @@ function eInArray(array, elemento) {
 // ----------------------------------------------------------------
 
 var arrayBombe = [];
+var maxTentativi = 100 - 16;
+maxTentativi = 4;
 var tentativiUtente = [];
 var punteggio = 0;
 
 // Il computer deve generare 16 numeri casuali tra 1 e 100.
 // I numeri non possono essere duplicati.
+
+
 while (arrayBombe.length < 16) {
   var numCasuale = numeroCasuale(1, 100);
   var controllo = eInArray(arrayBombe, numCasuale);
@@ -52,26 +56,38 @@ console.log(arrayBombe);
 
 
 var perso = false;
-while ((tentativiUtente.length < 3) && (perso == false)) {
+while (tentativiUtente.length < maxTentativi && perso == false) {
 
   var numUtente = parseInt(prompt('Inserisci un numero compreso tra 1 e 100'));
+  console.log(numUtente);
   var controlloUtente = eInArray(tentativiUtente, numUtente);
-  if(numUtente == tentativiUtente) {
-    alert('NUMERO GIA INSERITO')
-  }
+  console.log('numero duplicato ', controlloUtente);
 
-  var controlloGioco = eInArray(arrayBombe, tentativiUtente);
-  console.log(controlloGioco);
+  var controlloGioco = eInArray(arrayBombe,tentativiUtente);
+  console.log('è una bomba ', controlloGioco);
 
-  if (controlloGioco == true) {
+
+  if(controlloGioco == true) {
     alert('HAI PERSO');
     perso = true;
-  } else if (controlloUtente == false) {
+  } else if(controlloGioco == false) {
     tentativiUtente.push(numUtente);
     punteggio++;
-    console.log(punteggio);
-
+    console.log('punteggio ', punteggio);
   }
+console.log(controlloUtente);
+  // var controlloGioco = eInArray(arrayBombe, tentativiUtente);
+  // console.log(controlloGioco);
+  //
+  // if (controlloGioco == true) {
+  //   alert('HAI PERSO');
+  //   perso = true;
+  // } else if (controlloUtente == false) {
+  //   tentativiUtente.push(numUtente);
+  //   punteggio++;
+  //   console.log(punteggio);
+  //
+  // }
 }
 
 console.log(tentativiUtente);
