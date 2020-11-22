@@ -33,7 +33,7 @@ function eInArray(array, elemento) {
 
 var arrayBombe = [];
 var maxTentativi = 100 - 16;
-maxTentativi = 4;
+maxTentativi = 5;
 var tentativiUtente = [];
 var punteggio = 0;
 
@@ -57,39 +57,31 @@ console.log(arrayBombe);
 
 var perso = false;
 while (tentativiUtente.length < maxTentativi && perso == false) {
-
   var numUtente = parseInt(prompt('Inserisci un numero compreso tra 1 e 100'));
   console.log(numUtente);
+
   var controlloUtente = eInArray(tentativiUtente, numUtente);
+  if (controlloUtente == true) {
+    alert('Numero gia inserito');
+  }
   console.log('numero duplicato ', controlloUtente);
 
   var controlloGioco = eInArray(arrayBombe,tentativiUtente);
   console.log('è una bomba ', controlloGioco);
 
-
   if(controlloGioco == true) {
-    alert('HAI PERSO');
+    alert('HAI TROVATO UNA BOMBA, HAI PERSO');
     perso = true;
   } else if(controlloGioco == false) {
     tentativiUtente.push(numUtente);
     punteggio++;
+
     console.log('punteggio ', punteggio);
   }
 console.log(controlloUtente);
-  // var controlloGioco = eInArray(arrayBombe, tentativiUtente);
-  // console.log(controlloGioco);
-  //
-  // if (controlloGioco == true) {
-  //   alert('HAI PERSO');
-  //   perso = true;
-  // } else if (controlloUtente == false) {
-  //   tentativiUtente.push(numUtente);
-  //   punteggio++;
-  //   console.log(punteggio);
-  //
-  // }
+
 }
 
-console.log(tentativiUtente);
+console.log('tentativiUtente ', tentativiUtente);
 
 // Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
