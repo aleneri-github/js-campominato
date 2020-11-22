@@ -30,19 +30,42 @@ function eInArray(array, elemento) {
 
 // NOTE: /FUNZIONI
 // ----------------------------------------------------------------
-
 var arrayBombe = [];
-var maxTentativi = 100 - 16;
-maxTentativi = 5;
+var maxTentativi
 var tentativiUtente = [];
 var punteggio = 0;
+
+// NOTE: BONUS
+var livello;
+var numeroMassimo;
+
+
+
+livello = parseInt(prompt('SELEZIONA LIVELLO TRA 0, 1, 2'))
+
+switch (livello) {
+
+  case 2:
+  numeroMassimo = 50;
+    break;
+
+    case 1:
+    numeroMassimo = 80;
+      break;
+
+  default:
+  numeroMassimo = 100;
+
+}
+
+maxTentativi = numeroMassimo - 16;
 
 // Il computer deve generare 16 numeri casuali tra 1 e 100.
 // I numeri non possono essere duplicati.
 
 
 while (arrayBombe.length < 16) {
-  var numCasuale = numeroCasuale(1, 100);
+  var numCasuale = numeroCasuale(1, numeroMassimo);
   var controllo = eInArray(arrayBombe, numCasuale);
 
   if (controllo == false) {
@@ -57,7 +80,7 @@ console.log(arrayBombe);
 
 var perso = false;
 while (tentativiUtente.length < maxTentativi && perso == false) {
-  var numUtente = parseInt(prompt('Inserisci un numero compreso tra 1 e 100'));
+  var numUtente = parseInt(prompt('Inserisci un numero compreso tra 1 e ' + numeroMassimo));
   console.log(numUtente);
 
   var controlloUtente = eInArray(tentativiUtente, numUtente);
@@ -66,7 +89,9 @@ while (tentativiUtente.length < maxTentativi && perso == false) {
   }
   console.log('numero duplicato ', controlloUtente);
 
-  var controlloGioco = eInArray(arrayBombe,numUtente);
+  // Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
+
+  var controlloGioco = eInArray(arrayBombe, numUtente);
   console.log('è una bomba ', controlloGioco);
 
   if(controlloGioco == true) {
@@ -75,13 +100,9 @@ while (tentativiUtente.length < maxTentativi && perso == false) {
   } else if(controlloGioco == false) {
     tentativiUtente.push(numUtente);
     punteggio++;
-
     console.log('punteggio ', punteggio);
   }
 console.log(controlloUtente);
-
 }
-
-console.log('tentativiUtente ', tentativiUtente);
-
-// Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
+punteggio = tentativiUtente.length;
+alert('Hai totalizzato '+ punteggio + ' punti');
