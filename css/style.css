@@ -9,14 +9,17 @@ body {
   height: 200px;
   width: 200px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 #box img {
   width: 100%;
   margin: 0 50px;
+  border-radius: 10px;
 }
 
 #box-testo {
   text-align: center;
+  color: #684343;
+  font-size: 20px;
 }

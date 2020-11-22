@@ -95,7 +95,7 @@ while (tentativiUtente.length < maxTentativi && perso == false) {
   console.log('è una bomba ', controlloGioco);
 
   if(controlloGioco == true) {
-    alert('HAI TROVATO UNA BOMBA, HAI PERSO');
+    alert('HAI TROVATO UNA BOMBA, HAI PERSO!!');
     perso = true;
   } else if(controlloGioco == false) {
     tentativiUtente.push(numUtente);
@@ -105,5 +105,4 @@ while (tentativiUtente.length < maxTentativi && perso == false) {
 console.log(controlloUtente);
 }
 punteggio = tentativiUtente.length;
-alert('Hai totalizzato ' + punteggio + ' punti');
 document.getElementById('punti').innerHTML = punteggio;
