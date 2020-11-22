@@ -105,4 +105,5 @@ while (tentativiUtente.length < maxTentativi && perso == false) {
 console.log(controlloUtente);
 }
 punteggio = tentativiUtente.length;
-alert('Hai totalizzato '+ punteggio + ' punti');
+alert('Hai totalizzato ' + punteggio + ' punti');
+document.getElementById('punti').innerHTML = punteggio;
